@@ -1,0 +1,609 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bottle:#141A17; --surface:#1C2320; --line:#333C37; --parchment:#EFE8D8;
+    --muted:#8B9990; --gold:#D9B44A; --il:#5FA8D3;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bottle);color:var(--parchment);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.5;padding-bottom:78px}
+  .wrap{max-width:840px;margin:0 auto;padding:0 14px}
+  header{padding:32px 0 14px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--muted)}
+  h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(36px,9.5vw,58px);
+    line-height:.95;margin:10px 0 6px}
+  h1 em{font-style:italic;color:var(--gold)}
+  .sub{color:var(--muted);font-size:13.5px;max-width:54ch;margin:0}
+
+  .strata{display:flex;gap:2px;height:32px;margin:20px 0 8px;border-radius:2px;overflow:hidden}
+  .stratum{flex:1;background:#222A26;position:relative;overflow:hidden}
+  .stratum span{position:absolute;left:0;bottom:0;width:100%;height:0%;transition:height .45s ease}
+  .tally{display:flex;justify-content:space-between;align-items:baseline;
+    font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);letter-spacing:.06em}
+  .tally b{font-size:22px;color:var(--parchment);font-weight:500}
+
+  .controls{display:flex;gap:8px;margin:18px 0 6px;flex-wrap:wrap}
+  input[type=search]{flex:1;min-width:150px;background:var(--surface);border:1px solid var(--line);
+    color:var(--parchment);padding:11px 13px;border-radius:3px;font:inherit;font-size:14px}
+  input[type=search]::placeholder{color:#6B7872}
+  .seg{display:flex;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+  .seg button{background:var(--surface);border:0;color:var(--muted);padding:11px 12px;
+    font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;cursor:pointer}
+  .seg button[aria-pressed=true]{background:var(--gold);color:#191E1B}
+  .seg button[data-f=il][aria-pressed=true]{background:var(--il);color:#0E1A22}
+  .seg button+button{border-left:1px solid var(--line)}
+
+  details.panel{margin:14px 0 4px;border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);padding:11px 0}
+  details.panel+details.panel{border-top:0;margin-top:-4px}
+  details.panel summary{cursor:pointer;list-style:none;font-family:"IBM Plex Mono",monospace;
+    font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  details.panel summary::-webkit-details-marker{display:none}
+  details.panel summary::before{content:"+ ";color:var(--gold)}
+  details.panel[open] summary::before{content:"&#8211; "}
+  .swatches{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px}
+  .sw{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
+  .sw i{width:13px;height:13px;border-radius:2px;display:block}
+
+  /* geography spine */
+  .geo{margin-top:16px;padding-left:16px;border-left:1px solid var(--line);position:relative}
+  .geo p.note{font-size:12.5px;color:var(--muted);margin:0 0 16px;font-style:italic;max-width:58ch}
+  .vill{position:relative;padding:0 0 15px}
+  .vill::before{content:"";position:absolute;left:-21px;top:6px;width:9px;height:9px;
+    border-radius:50%;background:var(--bottle);border:1.5px solid #4E5A53}
+  .vill.key::before{background:var(--gold);border-color:var(--gold)}
+  .vname{font-weight:600;font-size:14px}
+  .vname small{font-weight:400;color:var(--muted);font-size:11.5px;margin-left:6px}
+  .crus{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+  .cru{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.03em;
+    padding:2.5px 7px;border-radius:2px;background:#232B27;border-left:2.5px solid var(--none)}
+  .band{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--gold);margin:22px 0 14px;padding-left:0}
+  .band:first-child{margin-top:0}
+  .gap{border-left:2px dashed #45514A;margin-left:-17px;padding:10px 0 10px 17px;
+    color:var(--muted);font-size:12px;font-style:italic;max-width:52ch}
+
+  section{margin-top:30px}
+  .shead{display:flex;align-items:baseline;gap:10px;padding-bottom:9px;
+    border-bottom:1px solid var(--line);cursor:pointer}
+  .snum{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--gold)}
+  .shead h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:24px;margin:0;flex:1}
+  .scount{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--muted);white-space:nowrap}
+  .sintro{color:var(--muted);font-size:12.5px;margin:9px 0 2px;max-width:60ch;font-style:italic}
+
+  .item{display:flex;gap:11px;padding:13px 10px 13px 13px;border-bottom:1px solid #262E2A;position:relative}
+  .item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--sc,#4A5450)}
+  .box{flex:0 0 24px;height:24px;margin-top:1px;border:1.5px solid #4A554F;border-radius:3px;
+    background:transparent;cursor:pointer;display:grid;place-items:center;padding:0;transition:.15s}
+  .box svg{width:14px;height:14px;opacity:0;transition:opacity .15s}
+  .done>.box,.item.done .box{background:var(--gold);border-color:var(--gold)}
+  .done>.box svg,.item.done .box svg{opacity:1}
+  .body{flex:1;min-width:0}
+  .name{font-size:15px;font-weight:500;cursor:pointer;line-height:1.35}
+  .item.done .name{color:var(--muted);text-decoration:line-through;text-decoration-thickness:1px}
+  .why{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.45}
+  .tags{margin-top:6px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+  .soil{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:#6E7C75}
+  .ilflag{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--il);border:1px solid #2E4A5C;padding:1.5px 6px;border-radius:2px}
+  .zflag{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:#B39A6E;border:1px solid #4A422F;padding:1.5px 6px;border-radius:2px}
+  .arearow{display:flex;gap:8px;align-items:center;margin:8px 0 4px}
+  .arearow label{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);white-space:nowrap}
+  select{flex:1;background:var(--surface);border:1px solid var(--line);color:var(--parchment);
+    padding:10px 12px;border-radius:3px;font:inherit;font-size:13.5px}
+  .kids{margin-top:10px;padding-left:2px;border-left:1px solid #2E3833}
+  .kid{display:flex;gap:9px;padding:7px 0 7px 12px;align-items:flex-start}
+  .kbox{flex:0 0 19px;height:19px;border:1.5px solid #4A554F;border-radius:3px;background:transparent;
+    cursor:pointer;display:grid;place-items:center;padding:0;margin-top:1px;transition:.15s}
+  .kbox svg{width:11px;height:11px;opacity:0}
+  .kid.done .kbox{background:var(--gold);border-color:var(--gold)}
+  .kid.done .kbox svg{opacity:1}
+  .kid .kn{font-size:13.5px;line-height:1.4;cursor:pointer}
+  .kid.done .kn{color:var(--muted);text-decoration:line-through}
+  textarea{width:100%;margin-top:9px;background:var(--surface);border:1px solid var(--line);
+    color:var(--parchment);border-radius:3px;padding:9px 10px;font:inherit;font-size:13px;
+    resize:vertical;min-height:56px;display:none}
+  .item.open textarea,.item.hasnote textarea{display:block}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(20,26,23,.95);backdrop-filter:blur(8px);
+    border-top:1px solid var(--line);padding:10px 14px;display:flex;gap:8px;justify-content:center}
+  .bar button{background:transparent;border:1px solid var(--line);color:var(--muted);padding:9px 13px;
+    border-radius:3px;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;cursor:pointer}
+  .bar button:hover{border-color:var(--gold);color:var(--gold)}
+  .toast{position:fixed;bottom:68px;left:50%;transform:translateX(-50%) translateY(14px);
+    background:var(--gold);color:#191E1B;padding:9px 18px;border-radius:3px;font-size:13px;
+    font-weight:500;opacity:0;pointer-events:none;transition:.25s}
+  .toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+  .hidden{display:none !important}
+  button:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{
+    outline:2px solid var(--gold);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Field logbook &#183; Alsace</div>
+    <h1>Seven grapes,<br>thirteen <em>soils</em></h1>
+    <p class="sub">Tick what you've actually tasted. Tap a line to log producer, cru and vintage. Blue-tagged lines can be done in Israel before you fly.</p>
+
+    <div class="strata" id="strata"></div>
+    <div class="tally">
+      <div><b id="doneN">0</b> / <span id="totalN">0</span> tasted</div>
+      <div id="pct">0%</div>
+    </div>
+
+    <div class="controls">
+      <input type="search" id="q" placeholder="Search grape, cru, village&#8230;" aria-label="Search">
+      <div class="seg" role="group" aria-label="Filter">
+        <button data-f="all" aria-pressed="true">All</button>
+        <button data-f="todo" aria-pressed="false">To do</button>
+        <button data-f="done" aria-pressed="false">Done</button>
+        <button data-f="il" aria-pressed="false">In Israel</button>
+      </div>
+    </div>
+
+    <div class="arearow">
+      <label for="zone">Area</label>
+      <select id="zone">
+        <option value="all">Everywhere &#8212; the whole region</option>
+        <option value="north">The northern enclave &#8212; Cleebourg</option>
+        <option value="bas">Bas-Rhin &#8212; Marlenheim to S&#233;lestat</option>
+        <option value="haut">Haut-Rhin &#8212; S&#233;lestat to Thann</option>
+      </select>
+    </div>
+
+    <details class="panel">
+      <summary>Geography &#8212; the map, north to south</summary>
+      <div class="geo" id="geo"></div>
+    </details>
+
+    <details class="panel">
+      <summary>Soil key &#8212; the coloured spine on each line</summary>
+      <div class="swatches" id="swatches"></div>
+    </details>
+  </header>
+  <main id="list"></main>
+</div>
+
+<div class="bar">
+  <button id="copyBtn">Copy log</button>
+  <button id="expandBtn">Open notes</button>
+  <button id="resetBtn">Reset</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SOILS={
+  granite:["Granite","#9AA6B0"], gneiss:["Gneiss","#8A8577"], schist:["Schist","#5C6470"],
+  volcanic:["Volcanic sedimentary","#8A5540"], sandstone:["Vosges sandstone","#C2735B"],
+  limestone:["Limestone (Muschelkalk)","#DCD6C0"], marlim:["Marl-limestone","#B99A5E"],
+  marl:["Marl / clay-marl","#8F7A4E"], clay:["Clay","#A85A3E"], gravel:["Gravel / galets","#A9B0A2"],
+  loess:["Loess & alluvium","#D3B183"], none:["Not soil-specific","#4A5450"]
+};
+
+const GEO=[
+ {band:"The northern island &#8212; Bas-Rhin"},
+ {v:"Wissembourg / Cleebourg",n:"the far north, one cooperative",key:1,c:[["No grand cru","marl"]]},
+ {gap:"Roughly 60 km with no vines. Phylloxera broke the vineyard here in the 19th century and it was never rejoined. Everything below is the continuous Route des Vins."},
+ {band:"Bas-Rhin &#8212; Marlenheim down to S&#233;lestat"},
+ {v:"Marlenheim",n:"official start of the route",key:1,c:[["Steinklotz","limestone"]]},
+ {v:"Wolxheim / Molsheim / Bergbieten",c:[["Altenberg de Wolxheim","marlim"],["Bruderthal","marlim"],["Engelberg","limestone"],["Altenberg de Bergbieten","marl"]]},
+ {v:"Ottrott",n:"red-wine village",c:[["Communal red","none"]]},
+ {v:"Heiligenstein",n:"Klevener country",key:1,c:[["Klevener communal","marlim"]]},
+ {v:"Barr",key:1,c:[["Kirchberg de Barr &#8212; PN grand cru","marlim"]]},
+ {v:"Mittelbergheim",key:1,c:[["Zotzenberg &#8212; the Sylvaner cru","marlim"]]},
+ {v:"Andlau",n:"three soils in one village",key:1,c:[["Kastelberg","schist"],["Wiebelsberg","sandstone"],["Moenchberg","marlim"]]},
+ {v:"Nothalten / Dambach-la-Ville",c:[["Muenchberg","volcanic"],["Frankstein","granite"]]},
+ {v:"Scherwiller / Kintzheim",c:[["Communal Riesling","granite"],["Praelatenberg","gneiss"]]},
+ {band:"Haut-Rhin &#8212; S&#233;lestat down to Thann"},
+ {v:"Saint-Hippolyte / Rodern",n:"red-wine villages",c:[["Communal reds","none"]]},
+ {v:"Bergheim",n:"Marcel Deiss",key:1,c:[["Altenberg de Bergheim &#8212; blends","marl"],["Kanzlerberg","marl"],["Engelgarten (lieu-dit)","gravel"]]},
+ {v:"Ribeauvill&#233;",n:"Trimbach; Oncle Charles farms here",key:1,c:[["Geisberg","marlim"],["Kirchberg de Ribeauvill&#233;","marlim"],["Osterberg","marl"]]},
+ {v:"Hunawihr",key:1,c:[["Rosacker &#8212; Clos Ste Hune","limestone"],["Clos Windsbuhl","limestone"]]},
+ {v:"Zellenberg / Ostheim",n:"Marc Temp&#233;; Oncle Charles cellar",key:1,c:[["Froehn","marl"],["Zellenberg hill &#8212; Lias clay-marl","marl"]]},
+ {v:"Riquewihr",n:"Hugel",key:1,c:[["Schoenenbourg","marl"],["Sporen","marl"]]},
+ {v:"Beblenheim / Bennwihr",n:"Bestheim",c:[["Sonnenglanz","marlim"],["Marckrain","marlim"]]},
+ {v:"Sigolsheim",n:"source of Temp&#233;'s Sophie",c:[["Mambourg","marlim"]]},
+ {v:"Kientzheim / Kaysersberg",n:"Domaine Weinbach",key:1,c:[["Schlossberg","granite"],["Furstentum","limestone"]]},
+ {v:"Ammerschwihr",key:1,c:[["Kaefferkopf &#8212; blends","marlim"]]},
+ {v:"Katzenthal / Niedermorschwihr",c:[["Wineck-Schlossberg","granite"],["Sommerberg","granite"]]},
+ {v:"Turckheim",n:"Zind-Humbrecht",key:1,c:[["Brand","granite"]]},
+ {v:"Wintzenheim",key:1,c:[["Hengst &#8212; PN grand cru","marlim"]]},
+ {v:"Eguisheim",n:"L&#233;on Beyer",c:[["Eichberg","marlim"],["Pfersigberg","limestone"]]},
+ {v:"Gueberschwihr / Pfaffenheim / Hattstatt",c:[["Goldert &#8212; the Muscat cru","limestone"],["Hatschbourg","marlim"]]},
+ {v:"Rouffach / Westhalten",key:1,c:[["Vorbourg &#8212; PN grand cru","limestone"],["Zinnkoepfl&#233;","limestone"],["Steinert","limestone"]]},
+ {v:"Guebwiller",n:"Schlumberger",c:[["Kitterl&#233;","sandstone"],["Kessler","sandstone"],["Saering","marlim"],["Spiegel","marlim"]]},
+ {v:"Thann",n:"the southern end",key:1,c:[["Rangen &#8212; steepest, volcanic","volcanic"]]}
+];
+
+const DATA=[
+{t:"The map, village by village",
+ i:"Tick a village once you have drunk something grown there. Four villages have sub-steps, because the rock changes inside the commune and one bottle cannot show you the place \u2014 everywhere else, one wine is enough. Use the Area selector above to show one stretch of road at a time; it filters the whole checklist, not just this section.",
+ items:[
+ {id:"v-cleebourg",n:"Cleebourg & Wissembourg",w:"The isolated far north. No grand cru. Clay-marl, one cooperative, Auxerrois its speciality. Then 60 km of nothing. A n&#233;gociant bottling of Cleebourg fruit blended for another market does not settle this tick \u2014 wait for a wine the village itself made.",s:"marl",z:"north"},
+ {id:"v-marlenheim",n:"Marlenheim",w:"Where the continuous Route des Vins officially begins. Grand cru Steinklotz.",s:"limestone",z:"bas"},
+ {id:"v-wolxheim",n:"Wolxheim",w:"Grand cru Altenberg de Wolxheim; also a communal denomination in its own name.",s:"marlim",z:"bas"},
+ {id:"v-molsheim",n:"Molsheim",w:"Grand cru Bruderthal.",s:"marlim",z:"bas"},
+ {id:"v-bergbieten",n:"Bergbieten & Dahlenheim",w:"Grand crus Altenberg de Bergbieten and Engelberg. Rarely visited, often good value.",s:"marl",z:"bas"},
+ {id:"v-ottrott",n:"Ottrott",w:"A red-wine village with its own communal denomination for Pinot Noir.",z:"bas"},
+ {id:"v-heiligenstein",n:"Heiligenstein",w:"Klevener country \u2014 Savagnin Rose, permitted in five communes and nowhere else on earth.",s:"marlim",z:"bas"},
+ {id:"v-barr",n:"Barr",w:"Grand cru Kirchberg de Barr, one of only three crus allowed to label Pinot Noir.",s:"marlim",z:"bas"},
+ {id:"v-mittelbergheim",n:"Mittelbergheim",w:"Grand cru Zotzenberg \u2014 the only cru where Sylvaner may be labelled.",s:"marlim",z:"bas"},
+ {id:"v-andlau",n:"Andlau",w:"The single best geology lesson in Alsace: three grand crus on three unrelated rocks, all walkable from the same car park. Do all three or the village has told you nothing.",s:"schist",z:"bas",
+  kids:[{id:"and-kastelberg",n:"Kastelberg \u2014 Steige schist, austere, needs a decade"},{id:"and-wiebelsberg",n:"Wiebelsberg \u2014 pink Vosges sandstone, light and perfumed"},{id:"and-moenchberg",n:"Moenchberg \u2014 marl-limestone, the fleshy one"}]},
+ {id:"v-nothalten",n:"Nothalten",w:"Grand cru Muenchberg, volcanic sandstone. Ostertag is here.",s:"volcanic",z:"bas"},
+ {id:"v-dambach",n:"Dambach-la-Ville",w:"Grand cru Frankstein, granite. The largest wine commune in the Bas-Rhin.",s:"granite",z:"bas"},
+ {id:"v-scherwiller",n:"Scherwiller & Kintzheim",w:"Scherwiller is a communal denomination for Riesling; Kintzheim holds grand cru Praelatenberg.",s:"gneiss",z:"bas"},
+ {id:"v-rodern",n:"Saint-Hippolyte & Rodern",w:"Two of the three red communal denominations. The Haut-Rhin starts here.",z:"haut"},
+ {id:"v-bergheim",n:"Bergheim",w:"Marcel Deiss country, and a genuine soil switch within a few hundred metres: heavy clay-marl on the slope, free-draining gravel below it.",s:"marl",z:"haut",
+  kids:[{id:"ber-altenberg",n:"Altenberg de Bergheim \u2014 clay-marl, field blends permitted"},{id:"ber-kanzlerberg",n:"Kanzlerberg \u2014 gypsum-rich marl, tiny and rarely seen"},{id:"ber-engelgarten",n:"Engelgarten lieu-dit \u2014 gravel over limestone pebbles"}]},
+ {id:"v-ribeauville",n:"Ribeauvill&#233;",w:"Trimbach, and the oldest cooperative in France. Grand crus Geisberg, Kirchberg de Ribeauvill&#233;, Osterberg.",s:"marlim",z:"haut"},
+ {id:"v-hunawihr",n:"Hunawihr",w:"Grand cru Rosacker, home of Clos Ste Hune; also Clos Windsbuhl. Limestone at its purest.",s:"limestone",z:"haut"},
+ {id:"v-zellenberg",n:"Zellenberg & Ostheim",w:"Marc Temp&#233;'s cellar; Oncle Charles's barn. Lias clay-marl on the hill, grand cru Froehn.",s:"marl",z:"haut"},
+ {id:"v-riquewihr",n:"Riquewihr",w:"Hugel. Grand crus Schoenenbourg and Sporen. The most photographed village on the route \u2014 go early.",s:"marl",z:"haut"},
+ {id:"v-beblenheim",n:"Beblenheim & Bennwihr",w:"Bestheim. Grand crus Sonnenglanz and Marckrain. Cooperative country.",s:"marlim",z:"haut"},
+ {id:"v-sigolsheim",n:"Sigolsheim",w:"Grand cru Mambourg, a south-facing spur that pushes furthest into the plain. Gewurztraminer land.",s:"marlim",z:"haut"},
+ {id:"v-kientzheim",n:"Kientzheim & Kaysersberg",w:"Two crus, two rocks, one valley, and usually one producer making both. Weinbach bottles Riesling from each \u2014 the cleanest granite-versus-limestone comparison you can buy.",s:"granite",z:"haut",
+  kids:[{id:"kie-schlossberg",n:"Schlossberg \u2014 granite, taut and citric"},{id:"kie-furstentum",n:"Furstentum \u2014 marl-limestone-sandstone, warm and broad"}]},
+ {id:"v-ammerschwihr",n:"Ammerschwihr",w:"Grand cru Kaefferkopf, the last admitted (2007) and the second cru permitting blends.",s:"marlim",z:"haut"},
+ {id:"v-katzenthal",n:"Katzenthal & Niedermorschwihr",w:"Grand crus Wineck-Schlossberg and Sommerberg. Steep granite, small growers.",s:"granite",z:"haut"},
+ {id:"v-turckheim",n:"Turckheim",w:"Zind-Humbrecht. Grand cru Brand \u2014 the reference for Alsace granite.",s:"granite",z:"haut"},
+ {id:"v-wintzenheim",n:"Wintzenheim",w:"Grand cru Hengst, one of the three Pinot Noir crus. Josmeyer and Barm&#232;s-Buecher.",s:"marlim",z:"haut"},
+ {id:"v-eguisheim",n:"Eguisheim",w:"L&#233;on Beyer. Grand crus Eichberg and Pfersigberg.",s:"marlim",z:"haut"},
+ {id:"v-gueberschwihr",n:"Gueberschwihr, Pfaffenheim & Hattstatt",w:"The quiet stretch between Eguisheim and Rouffach, and the only place to settle two ticks elsewhere in this list: grand cru Goldert, where Muscat is taken seriously, and Hatschbourg, a marl-limestone bench that gives Gewurztraminer structure.",s:"marlim",z:"haut"},
+ {id:"v-rouffach",n:"Rouffach & Westhalten",w:"Grand cru Vorbourg (Pinot Noir permitted since 2024), plus Zinnkoepfl&#233; \u2014 the hottest, driest cru in Alsace.",s:"limestone",z:"haut"},
+ {id:"v-guebwiller",n:"Guebwiller",w:"The only commune holding four grand crus, nearly all farmed by one house (Schlumberger), so you can taste all four side by side from a single cellar. Sandstone on the terraces, marl at the foot.",s:"sandstone",z:"haut",
+  kids:[{id:"gue-kitterle",n:"Kitterl&#233; \u2014 terraced sandstone and volcanic, the steep one"},{id:"gue-kessler",n:"Kessler \u2014 sandstone, floral and fine"},{id:"gue-saering",n:"Saering \u2014 marl-limestone, the broadest"},{id:"gue-spiegel",n:"Spiegel \u2014 marl-sandstone, the gentlest"}]},
+ {id:"v-thann",n:"Thann",w:"The southern full stop. Grand cru Rangen \u2014 volcanic, terraced, the steepest vineyard in Alsace.",s:"volcanic",z:"haut"}
+]},
+
+{t:"The seven, plain and simple",
+ i:"Before anything clever: taste each grape in its cheapest, most honest form \u2014 entry level, steel, around 12.5%. This is a calibration set, not a wish list. Do not spend a great bottle here: a barrel-aged cult wine installs the wrong reference point and every ordinary example afterwards will read as thin. These nine are the hardest ticks on the list precisely because nobody wants to use a tasting slot on a cheap wine.",
+ items:[
+ {id:"ries-base",n:"Riesling &#8212; basic Alsace AOC",w:"Bone-dry, steely, high acid. The reference point for the whole region.",il:1},
+ {id:"gewurz-base",n:"Gewurztraminer &#8212; basic Alsace AOC",w:"Lychee, rose, ginger. Low acid, high alcohol, often a little sweet. Note how fast it tires the palate.",il:1},
+ {id:"pg-base",n:"Pinot Gris &#8212; basic Alsace AOC",w:"Smoke, quince, honey. Nothing like Italian Pinot Grigio &#8212; prove that to yourself.",il:1},
+ {id:"muscat-base",n:"Muscat d'Alsace &#8212; basic",w:"The one aromatic grape that smells sweet and tastes dry. Grape skin, elderflower.",il:1},
+ {id:"pb-base",n:"Pinot Blanc",w:"The workhorse. Neutral, soft, apple. Ask whether it's really Pinot Blanc or mostly Auxerrois.",il:1},
+ {id:"aux-base",n:"Auxerrois, varietally labelled",w:"Rounder and lower-acid than Pinot Blanc, with a waxy almond edge. Rare on labels &#8212; Cleebourg in the far north is the specialist.",s:"marl",z:"north"},
+ {id:"sylv-base",n:"Sylvaner",w:"Herbal, saline, low-key. Long dismissed; the good ones from old vines are serious.",il:1},
+ {id:"pn-light",n:"Pinot Noir &#8212; light, unoaked",w:"Pale, sour-cherry, chillable. The historic Alsace red style.",il:1},
+ {id:"chasselas",n:"Chasselas",w:"Nearly extinct here. Neutral, delicate, usually sold by the carafe in a winstub. A genuine tick."}
+]},
+
+{t:"Where the varieties get complicated",
+ i:"The distinctions that separate someone who read a book from someone who has tasted. Several of these need more than one glass &#8212; they're broken into steps.",
+ items:[
+ {id:"muscat-pair",n:"Muscat: Petits Grains vs Ottonel",w:"Three Muscats are legal in Alsace, not two, and a wine labelled simply Muscat may blend all of them. Petits Grains is finer and more citric, Ottonel broader and more floral, Rose the rarest.",
+  kids:[{id:"mu-a",n:"Muscat Blanc &#224; Petits Grains, on its own"},{id:"mu-b",n:"Muscat Ottonel, on its own &#8212; a wine labelled Muscat Ottonel must be 100% it"},{id:"mu-c",n:"Muscat Rose &#224; Petits Grains &#8212; the forgotten third Muscat, pink-skinned"},{id:"mu-d",n:"All three side by side &#8212; write down which is which blind"}]},
+ {id:"pb-aux-pair",n:"Pinot Blanc vs Auxerrois",w:"The single most useful comparison in Alsace whites. Auxerrois: lower acid, rounder, waxier.",
+  kids:[{id:"pa-a",n:"A wine stated as true Pinot Blanc"},{id:"pa-b",n:"A wine stated as Auxerrois"},{id:"pa-c",n:"Both in one sitting &#8212; can you feel the acid difference?"}]},
+ {id:"pinot-klevner",n:"A wine labelled just \u0027Pinot\u0027 or \u0027Klevner\u0027",w:"A labelling trap worth knowing cold. \u0027Pinot Blanc\u0027 may legally contain only Pinot Blanc and Auxerrois. \u0027Pinot\u0027 or \u0027Klevner\u0027 is wider still: Auxerrois, Pinot Blanc, Pinot Gris and Pinot Noir vinified white, in any proportion. Do not confuse Klevner with Klevener.",il:1},
+ {id:"klevener",n:"Klevener de Heiligenstein",w:"Savagnin Rose, permitted in only five communes around Heiligenstein. Spicy, restrained, nothing else like it. Bas-Rhin only.",s:"marlim",z:"bas"},
+ {id:"chardonnay",n:"Chardonnay &#8212; and why it can't say Alsace",w:"Permitted in the region for Cr&#233;mant d'Alsace only. Not authorised for still AOC Alsace, so any still Chardonnay here is declassified to Vin de France. Cleebourg bottles one.",il:1},
+ {id:"serious-pb",n:"A Pinot Blanc that proves the grape wrong",w:"Alsace\u0027s most patronised variety, taken seriously: old vines, low yields, long ageing on full lees. The result has weight, salinity and a nutty depth that the everyday version never hints at. Do NOT let this stand in for the baseline Pinot Blanc in section 02 \u2014 the whole point is that the two taste like different grapes.",il:1},
+ {id:"old-sylv",n:"Old-vine Sylvaner",w:"Vines 50+ years. Depth and salinity ordinary Sylvaner never shows."},
+ {id:"dry-gewurz",n:"A genuinely dry Gewurztraminer",w:"Harder to find than you'd think. Check the back-label sweetness scale before buying.",il:1},
+ {id:"dry-pg",n:"A genuinely dry Pinot Gris",w:"Same challenge. Trimbach, Hugel and Josmeyer are reliable in this style.",il:1},
+ {id:"latitude-pair",n:"The same grape, 60 km apart",w:"Cleebourg is the one part of Alsace that is a climate outlier rather than a soil one: far enough north to ripen noticeably later, on clay-marl it shares with villages in the Haut-Rhin. Isolate the latitude by holding the grape and the rock roughly constant and moving only the map. Buy the northern bottle first, since it is the hard one to find.",z:"north",
+  kids:[{id:"lat-a",n:"A Cleebourg white \u2014 Pinot Gris or Riesling"},{id:"lat-b",n:"The same grape from the Haut-Rhin, also on marl"},{id:"lat-c",n:"Together \u2014 compare alcohol, acid and ripeness of fruit, not aroma"}]},
+ {id:"vintage-pair",n:"Warm vintage vs cool vintage",w:"Same producer, same cru, two years apart. Teaches you vintage before it teaches you anything else.",
+  kids:[{id:"vt-a",n:"The warm year (e.g. 2018, 2020)"},{id:"vt-b",n:"The cool year (e.g. 2021, 2014)"},{id:"vt-c",n:"Both open together &#8212; note alcohol and acid, not just fruit"}]}
+]},
+
+{t:"Riesling across the geology",
+ i:"The core exercise of the trip. One grape, one region, radically different rock. If you finish nothing else, finish this.",
+ items:[
+ {id:"r-granite",n:"Riesling on granite",w:"Schlossberg (Kientzheim &#8212; Weinbach), Brand (Turckheim &#8212; Zind-Humbrecht), Sommerberg, Wineck-Schlossberg. Taut, citric, fast-opening.",s:"granite",il:1,z:"haut"},
+ {id:"r-volcanic",n:"Riesling on volcanic &#8212; Rangen de Thann",w:"Southernmost and steepest grand cru. Smoky, flinty, almost savage. Zind-Humbrecht Clos St-Urbain or Schoffit Clos St-Th&#233;obald.",s:"volcanic",il:1,z:"haut"},
+ {id:"r-schist",n:"Riesling on schist &#8212; Kastelberg, Andlau",w:"Steige schist, unique in Alsace. Austere and slow; needs a decade. Kreydenweiss is the address.",s:"schist",z:"bas"},
+ {id:"r-sandstone",n:"Riesling on Vosges sandstone &#8212; Wiebelsberg",w:"Pink gr&#232;s, same village as Kastelberg. Light, perfumed, low in body. Taste them one after the other.",s:"sandstone",z:"bas"},
+ {id:"r-limestone",n:"Riesling on limestone &#8212; Rosacker or Windsbuhl",w:"Hunawihr. Chalky grip, very long-lived. Home of Trimbach's Clos Ste Hune.",s:"limestone",il:1,z:"haut"},
+ {id:"r-marlim",n:"Riesling on marl-limestone",w:"Kirchberg de Ribeauvill&#233;, Osterberg, Geisberg. Broader and rounder; more flesh.",s:"marlim",il:1,z:"haut"},
+ {id:"lime-marl-pair",n:"Pure limestone vs marl-limestone, back to back",w:"The distinction most people blur. Muschelkalk gives grip, salinity and length with little body. Add marl and you add flesh and breadth &#8212; it's the marl, not the limestone, that fattens Alsace whites.",s:"limestone",
+  kids:[{id:"lm-a",n:"The pure limestone wine"},{id:"lm-b",n:"The marl-limestone wine"},{id:"lm-c",n:"Both together &#8212; describe the difference in weight, not flavour"}]},
+ {id:"r-marl",n:"Riesling on pure marl \u2014 Schoenenbourg",w:"Keuper marl with gypsum, at Riquewihr. Rich, broad and slow to open, and famous for late-harvest wines. The heavy end of the scale, distinct from the marl-limestone above.",s:"marl",z:"haut",il:1},
+ {id:"r-gneiss",n:"Riesling on gneiss &#8212; Frankstein or Praelatenberg",w:"Between granite and schist in feel. Fine-boned, slightly smoky.",s:"gneiss",z:"bas"},
+ {id:"r-flat",n:"Riesling from the flat valley floor",w:"Loess and alluvium, basic Alsace AOC. Your control sample &#8212; this is what the crus are measured against.",s:"loess",il:1}
+]},
+
+{t:"The other nobles, placed on rock",
+ i:"Riesling is the transparent grape, but the others carry site too &#8212; you just have to listen past the aroma.",
+ items:[
+ {id:"g-marlim",n:"Gewurztraminer on marl-limestone",w:"Hengst, Eichberg, Hatschbourg. Marl gives it the structure it usually lacks.",s:"marlim",il:1,z:"haut"},
+ {id:"g-limestone",n:"Gewurztraminer on limestone &#8212; Zinnkoepfl&#233;",w:"The driest, hottest cru in Alsace. Powerful and dry-finishing.",s:"limestone",z:"haut"},
+ {id:"g-granite",n:"Gewurztraminer on granite &#8212; Brand",w:"Rarer. Lifted and more perfumed, less oily.",s:"granite",il:1,z:"haut"},
+ {id:"pg-volcanic",n:"Pinot Gris on volcanic &#8212; Rangen",w:"Arguably the greatest Pinot Gris on earth. Smoke, gunflint, dried fruit.",s:"volcanic",il:1,z:"haut"},
+ {id:"pg-marl",n:"Pinot Gris on marl &#8212; Clos Jebsal or Rotenberg",w:"Rich, botrytis-prone, honeyed. The other extreme from Rangen.",s:"marl",il:1,z:"haut"},
+ {id:"muscat-gc",n:"Muscat Grand Cru &#8212; Goldert",w:"The cru where Muscat is taken seriously. Most producers won't have one; ask anyway.",s:"limestone",z:"haut"}
+]},
+
+{t:"The appellation ladder",
+ i:"Alsace has more label tiers than people realise. Taste up the hierarchy from one producer in one visit and it clicks permanently.",
+ items:[
+ {id:"aoc-base",n:"AOC Alsace &#8212; regional",w:"The base. Roughly three quarters of production.",il:1},
+ {id:"lieu-dit",n:"AOC Alsace + named lieu-dit",w:"A named site that is not a grand cru. Where many of the best-value serious wines now live. Deiss's Engelgarten is the textbook case.",s:"gravel",il:1},
+ {id:"communale",n:"AOC Alsace Communale",w:"Thirteen village denominations: Bergheim, Blienschwiller, C&#244;te de Rouffach, C&#244;tes de Barr, Coteaux du Haut-Koenigsbourg, Klevener de Heiligenstein, Scherwiller, Vall&#233;e Noble, Val Saint-Gr&#233;goire, Wolxheim (white); Ottrott, Rodern, Saint-Hippolyte (red)."},
+ {id:"rose",n:"Still Alsace ros&#233; (Schillerwein)",w:"Everyone forgets Alsace makes a still ros&#233;. Pinot Noir, its own legal minimum alcohol, and the old Alsatian name Schillerwein. Almost never exported \u2014 a cellar-door and winstub wine."},
+ {id:"grandcru",n:"AOC Alsace Grand Cru",w:"51 crus, each its own appellation since 2011. Normally Riesling, Gewurztraminer, Pinot Gris and Muscat only.",il:1},
+ {id:"cremant",n:"Cr&#233;mant d'Alsace blanc",w:"A quarter of all production. Traditional method; Pinot Blanc, Auxerrois, Pinot Gris, Riesling, Pinot Noir and Chardonnay.",il:1},
+ {id:"cremant-rose",n:"Cr&#233;mant d'Alsace ros&#233;",w:"100% Pinot Noir by law. Try one against a Champagne ros&#233;.",il:1},
+ {id:"cremant-bdn",n:"Cr&#233;mant Blanc de Noirs",w:"White sparkling from Pinot Noir alone. Different animal from the ros&#233; \u2014 broader, more red-fruited, no colour."},
+ {id:"cremant-lees",n:"Cr&#233;mant with long lees ageing",w:"Look for '&#201;motion' or a stated 24&#8211;36 months. Shows what the category can do."}
+]},
+
+{t:"The sweetness ladder",
+ i:"Alsace's oldest reputational problem is that you can't read dryness off the front label. Learn the back-label scale, then calibrate your palate against it.",
+ items:[
+ {id:"sw-dry",n:"A legally dry wine (under 4 g/l)",w:"Check the back label. Note how much fruit you still read as 'sweet'.",il:1},
+ {id:"sw-offdry",n:"An off-dry wine, 10&#8211;20 g/l",w:"The style that confuses everyone. Where does the sugar sit on your palate?",il:1},
+ {id:"sw-rich",n:"A rich late-picked wine NOT labelled VT",w:"Plenty of sweetness without the legal designation. This is the grey zone.",il:1},
+ {id:"sw-vt",n:"Vendanges Tardives",w:"Legally defined minimum must weights. Concentrated, sometimes tasting dry despite the sugar.",il:1},
+ {id:"sw-sgn",n:"S&#233;lection de Grains Nobles",w:"Botrytised, berry-by-berry selection, tiny yields. Only in exceptional years.",il:1},
+ {id:"sw-pair",n:"Same grower, same grape: dry vs VT",w:"Ask for both in one flight. Nothing teaches the ladder faster.",
+  kids:[{id:"sp-a",n:"The dry bottling"},{id:"sp-b",n:"The VT or SGN bottling"},{id:"sp-c",n:"Side by side &#8212; is the ripe fruit the same underneath?"}]}
+]},
+
+{t:"Cellar and vessel",
+ i:"Terroir gets all the attention in Alsace; winemaking decides half of what's in your glass.",
+ items:[
+ {id:"foudre",n:"Aged in old oak foudre",w:"The Alsace tradition. Large, neutral, sometimes centuries old. Texture without oak flavour. Deiss ferments Engelgarten this way, 12 months on full lees.",il:1},
+ {id:"barrique",n:"An Alsace white aged in small Burgundian barrique",w:"Deliberately un-Alsatian: 228-litre pi&#232;ces instead of foudre. Marc Temp&#233;'s Sophie sits four years on full lees in them, reaching 14% alcohol at 2.3 g/l residual sugar. Look for the oxidative edge and the vanilla-brioche texture that comes with it.",il:1},
+ {id:"steel",n:"Stainless steel, fully reductive",w:"The modern clean style. Sharper, more primary.",il:1},
+ {id:"amphora",n:"Amphora, concrete egg or sandstone jar",w:"A growing minority. Ask what it changed."},
+ {id:"skin",n:"Skin contact / orange wine",w:"Alsace has a strong natural scene. Oncle Charles macerates the whole white range for weeks. Gewurztraminer on skins is a different animal entirely.",il:1},
+ {id:"pn-oak",n:"Pinot Noir aged in barrique",w:"The ambitious modern red style. Compare against the light one from section one."},
+ {id:"pn-whole",n:"Pinot Noir with whole-cluster or carbonic",w:"Peppery, floral, crunchy. Increasingly common among younger growers."},
+ {id:"petnat",n:"P&#233;t-nat",w:"Off-appellation, sold as Vin de France. Oncle Charles makes one.",il:1},
+ {id:"oxidative",n:"A deliberately oxidative or sous-voile oddity",w:"Rare, usually experimental. Worth hunting."},
+ {id:"old-ries",n:"A Riesling with 10+ years of age",w:"Petrol, dried lime, honey. Do this before you leave &#8212; mature Alsace is hard to buy elsewhere."}
+]},
+
+{t:"Blends, exceptions and trophies",
+ i:"The rule-breakers. Each exists because of a specific legal exception, and knowing why is what makes you sound like a professional.",
+ items:[
+ {id:"edelzwicker",n:"Edelzwicker",w:"A blend of permitted varieties, no minimum quality, often no vintage. Usually the carafe wine in a winstub."},
+ {id:"gentil",n:"Gentil",w:"A stricter blend than Edelzwicker: minimum 50% noble varieties, each vinified separately. Hugel popularised it and still bottles it, but the term\u0027s standing in the current cahier des charges is disputed \u2014 a good question to put to a producer.",il:1},
+ {id:"assemblage",n:"A house cuv&#233;e blended in the cellar",w:"Separate parcels and varieties fermented apart, then assembled by the winemaker before bottling. The opposite of complantation, and the normal way blends are made everywhere else in France.",il:1},
+ {id:"complantation",n:"A co-planted field blend",w:"Complantation: varieties growing interplanted in one parcel and picked together, so the blend happens in the vineyard, not the cellar. Two flavours of it &#8212; deliberate (Deiss's Engelgarten: Riesling, Pinot Gris, Muscat and Pinot Noir co-planted on gravel at Bergheim) and inherited (Marc Temp&#233;'s Sophie: an old Pinot Blanc parcel on Zellenberg clay-marl, patched over decades with stray Riesling and Gewurztraminer vines). Same technique, completely different intent.",s:"gravel",il:1},
+ {id:"altenberg",n:"Altenberg de Bergheim",w:"One of only two grand crus permitted to bottle a field blend. Marcel Deiss built a philosophy on it.",s:"marl",il:1,z:"haut"},
+ {id:"kaefferkopf",n:"Kaefferkopf",w:"The other blend-permitted grand cru, and the last admitted (2007).",s:"marlim",z:"haut"},
+ {id:"zotzenberg",n:"Sylvaner from Grand Cru Zotzenberg",w:"The only grand cru where Sylvaner may be labelled. Mittelbergheim. Proof the grape can be great.",s:"marlim",z:"bas"},
+ {id:"pn-gc",n:"Pinot Noir Grand Cru",w:"Only three crus permit it: Hengst and Kirchberg de Barr (May 2022), Vorbourg (July 2024). The first red grand crus in Alsace's history &#8212; and the list is still growing.",s:"marlim"},
+ {id:"pn-lieudit",n:"A serious Pinot Noir from a lieu-dit, not a grand cru",w:"Where the best Alsace reds live while the paperwork catches up. Deiss's Burlenberg and Gruenspiel, Mur&#233;'s Clos St-Landelin, Albert Mann's Clos des Failles, Frick's Strangenberg."},
+ {id:"pn-communal",n:"A red from a communal denomination",w:"Ottrott, Rodern and Saint-Hippolyte are the three village names reserved for red."},
+ {id:"cleebourg-aux",n:"Auxerrois from Cleebourg",w:"The isolated northern enclave near Wissembourg, cut off from the main vineyard since phylloxera. Clay-marl, its own cooperative, its own grape.",s:"marl",z:"north"},
+ {id:"schweigen",n:"A German wine grown on French soil",w:"At Schweigen, over the border from Wissembourg, the Sonnenberg crosses the frontier. Becker and J&#252;lg farm Alsatian limestone and sell it as Pfalz.",s:"limestone",z:"north"},
+ {id:"refuses-gc",n:"A great wine that refuses the Grand Cru name",w:"Trimbach and Hugel largely boycotted the 1983 classification, arguing the crus were drawn too generously. So Clos Ste Hune (inside Rosacker) and Cuv&#233;e Fr&#233;d&#233;ric Emile (Geisberg and Osterberg) say Alsace, not Grand Cru. The label is a political statement.",z:"haut",il:1},
+ {id:"monopole",n:"A monopole clos",w:"The walled single-owner vineyard is a distinctly Alsatian habit. Clos Ste Hune, Clos St-Urbain in Rangen, Clos Windsbuhl, Clos Jebsal, Clos St-Landelin, Clos des Capucins.",z:"haut",il:1},
+ {id:"tokay",n:"A bottle labelled Tokay Pinot Gris",w:"Pinot Gris was sold as Tokay d\u0027Alsace until the EU banned the name to protect Hungarian Tokaji; the last vintage was 2006. You can only tick this from an old bottle \u2014 look on cellar-door back shelves and restaurant lists."},
+ {id:"icon",n:"Clos Ste Hune or an equivalent icon",w:"Trimbach's monopole inside Rosacker. If the budget allows once, this is the once.",s:"limestone",z:"haut"}
+]},
+
+{t:"Who made it",
+ i:"Producer type shapes style as much as soil does. Collect all six and you've seen the whole industry.",
+ items:[
+ {id:"coop",n:"A cooperative",w:"Around a third of production. Cleebourg, Bestheim, Turckheim, Ribeauvill&#233;. Often excellent value.",il:1},
+ {id:"negoce",n:"A large n&#233;gociant house",w:"Hugel, Trimbach, Beyer, Dopff. Consistency, blending skill, long histories.",il:1},
+ {id:"domaine",n:"A classic family domaine",w:"Estate fruit only, a few hectares, cellar door in the village.",il:1},
+ {id:"biodynamic",n:"A certified biodynamic domaine",w:"Alsace has one of the highest concentrations in France. Zind-Humbrecht, Weinbach, Deiss, Temp&#233;, Ostertag, Barm&#232;s-Buecher, Josmeyer.",il:1},
+ {id:"natural",n:"A low-intervention / natural producer",w:"Oncle Charles, Binner, Rietsch, Geschickt. Often outside the appellation system entirely &#8212; look for Vin de France on the label.",il:1},
+ {id:"walkin",n:"A grower you could only find by walking in",w:"No website, no exports, a sign on a barn door. The best story you'll bring home."}
+]},
+
+{t:"After the meal",
+ i:"Alsace is the great fruit-brandy region of France, and one of its spirits carries its own protected designation. A wine professional who skips this has skipped a third of what the region actually distils and drinks.",
+ items:[
+ {id:"marc",n:"Marc d\u0027Alsace Gewurztraminer",w:"A protected designation in its own right, not a wine term. Pomace brandy distilled from Gewurztraminer marc used for AOC Alsace wine, bottled at 45% minimum, unaged and colourless. Floral and spicy rather than harsh."},
+ {id:"eaudevie",n:"An Alsatian eau-de-vie",w:"Clear fruit brandies, distilled from whole fruit, no oak, no sugar. Alsace and its Vosges hinterland are the reference for these in France. Served ice-cold in a tall thin glass after a heavy meal.",
+  kids:[{id:"ev-kirsch",n:"Kirsch \u2014 cherry, the classic"},{id:"ev-mirabelle",n:"Mirabelle \u2014 yellow plum, the local favourite"},{id:"ev-poire",n:"Poire William \u2014 pear, sometimes with the fruit grown inside the bottle"}]},
+ {id:"cremant-digestif",n:"Ask a grower which spirit they actually drink",w:"Most domaines distil a little for themselves and never sell it. The answer is rarely the one on the price list."}
+]},
+
+{t:"At the table",
+ i:"Alsace is a food region first. These pairings are the local logic, not a sommelier's invention.",
+ items:[
+ {id:"flammekueche",n:"Tarte flamb&#233;e with Sylvaner or Pinot Blanc",w:"The default pairing of the region. Do it in a village, not central Colmar."},
+ {id:"choucroute",n:"Choucroute garnie with Riesling",w:"Acid against fat and salt. The classic argument for dry Alsace."},
+ {id:"munster",n:"Munster with Gewurztraminer",w:"The pairing everyone quotes. Test whether you actually agree.",il:1},
+ {id:"foiegras",n:"Foie gras with VT or SGN",w:"The other canonical match."},
+ {id:"winstub",n:"An evening in a winstub",w:"Wine by the carafe, no labels, local crowd. Where the region drinks its own wine."}
+]}
+];
+
+let state={checked:{},notes:{}}, filter="all", query="", zone="all";
+const ZLABEL={north:"North enclave",bas:"Bas-Rhin",haut:"Haut-Rhin"};
+const KEY="alsace-checklist-v2";
+
+/* ---- build reference panels ---- */
+document.getElementById("swatches").innerHTML=Object.values(SOILS)
+  .map(([n,c])=>`<div class="sw"><i style="background:${c}"></i>${n}</div>`).join("");
+
+document.getElementById("geo").innerHTML=
+ `<p class="note">Alsace runs one long north&#8211;south strip along the Vosges foothills. Bas-Rhin is the northern half and Haut-Rhin the southern; almost every famous name is in the Haut-Rhin. Gold dots are villages that matter for this checklist.</p>`+
+ GEO.map(g=>{
+  if(g.band)return `<div class="band">${g.band}</div>`;
+  if(g.gap)return `<div class="gap">${g.gap}</div>`;
+  const crus=(g.c||[]).map(([n,s])=>`<span class="cru" style="border-left-color:${SOILS[s][1]}">${n}</span>`).join("");
+  return `<div class="vill ${g.key?"key":""}"><div class="vname">${g.v}${g.n?`<small>${g.n}</small>`:""}</div><div class="crus">${crus}</div></div>`;
+ }).join("");
+
+document.getElementById("strata").innerHTML=DATA.map((s,k)=>{
+  const keys=["loess","granite","sandstone","schist","volcanic","marlim","limestone","marl","gravel","gneiss","clay"];
+  return `<div class="stratum" title="${s.t}"><span data-sec="${k}" style="background:${SOILS[keys[k%keys.length]][1]}"></span></div>`;
+}).join("");
+
+/* ---- leaves: every tickable unit ---- */
+function leaves(it){ return it.kids ? it.kids.map(k=>k.id) : [it.id]; }
+function allLeaves(){ const a=[]; DATA.forEach(s=>s.items.forEach(i=>a.push(...leaves(i)))); return a; }
+
+function render(){
+  document.getElementById("list").innerHTML=DATA.map((sec,si)=>{
+    const rows=sec.items.map(it=>{
+      const ls=leaves(it), dn=ls.filter(l=>state.checked[l]).length, all=dn===ls.length;
+      const note=state.notes[it.id]||"", soil=SOILS[it.s||"none"];
+      const kidsHtml=it.kids?`<div class="kids">${it.kids.map(k=>`
+        <div class="kid ${state.checked[k.id]?"done":""}" data-leaf="${k.id}">
+          <button class="kbox" role="checkbox" aria-checked="${!!state.checked[k.id]}" aria-label="${k.n.replace(/"/g,"")}">
+            <svg viewBox="0 0 16 16"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#191E1B" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button><div class="kn">${k.n}</div></div>`).join("")}</div>`:"";
+      return `<div class="item ${all?"done":""} ${note?"hasnote":""}" data-id="${it.id}"
+          data-leaf="${it.kids?"":it.id}" data-il="${it.il?1:0}"
+          data-z="${it.z||""}" data-txt="${(it.n+" "+it.w+" "+(it.z?ZLABEL[it.z]:"")).toLowerCase().replace(/"/g,"")}" style="--sc:${soil[1]}">
+        <button class="box" role="checkbox" aria-checked="${all}" aria-label="${it.n.replace(/"/g,"")}">
+          <svg viewBox="0 0 16 16"><path d="M3 8.5l3.5 3.5L13 4.5" stroke="#191E1B" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="body">
+          <div class="name">${it.n}${it.kids?` <span style="color:#7E8C84;font-weight:400;font-size:12px">(${dn}/${ls.length})</span>`:""}</div>
+          <div class="why">${it.w}</div>
+          <div class="tags">${it.s&&it.s!=="none"?`<span class="soil">${soil[0]}</span>`:""}${it.z?`<span class="zflag">${ZLABEL[it.z]}</span>`:""}${it.il?`<span class="ilflag">Israel</span>`:""}</div>
+          ${kidsHtml}
+          <textarea placeholder="Producer, cru, vintage, what you noticed&#8230;">${note}</textarea>
+        </div></div>`;
+    }).join("");
+    return `<section data-sec="${si}">
+      <div class="shead"><span class="snum">${String(si+1).padStart(2,"0")}</span>
+      <h2>${sec.t}</h2><span class="scount"></span></div>
+      <p class="sintro">${sec.i}</p>${rows}</section>`;
+  }).join("");
+  applyFilter(); updateTotals();
+}
+
+function updateTotals(){
+  const all=allLeaves(), dn=all.filter(l=>state.checked[l]).length;
+  document.getElementById("doneN").textContent=dn;
+  document.getElementById("totalN").textContent=all.length;
+  document.getElementById("pct").textContent=Math.round(dn/all.length*100)+"%";
+  DATA.forEach((s,si)=>{
+    const ls=[]; s.items.forEach(i=>ls.push(...leaves(i)));
+    const d=ls.filter(l=>state.checked[l]).length;
+    const bar=document.querySelector(`.stratum span[data-sec="${si}"]`);
+    if(bar)bar.style.height=(d/ls.length*100)+"%";
+    const c=document.querySelector(`section[data-sec="${si}"] .scount`);
+    if(c)c.textContent=`${d}/${ls.length}`;
+  });
+}
+
+function applyFilter(){
+  document.querySelectorAll(".item").forEach(el=>{
+    const done=el.classList.contains("done");
+    const okF = filter==="all" || (filter==="done"&&done) || (filter==="todo"&&!done)
+             || (filter==="il"&&el.dataset.il==="1");
+    const okQ = !query || el.dataset.txt.includes(query);
+    const okZ = zone==="all" || !el.dataset.z || el.dataset.z===zone;
+    el.classList.toggle("hidden",!(okF&&okQ&&okZ));
+  });
+  document.querySelectorAll("section").forEach(s=>
+    s.classList.toggle("hidden", s.querySelectorAll(".item:not(.hidden)").length===0));
+}
+
+/* Uses Claude's cross-session storage when available (inside claude.ai / the
+   Claude app). Falls back to the browser's own localStorage when this file is
+   opened standalone \u2014 e.g. hosted on GitHub Pages and shared as a link \u2014
+   so progress still saves per person, per device, in that context too. */
+const hasCloudStorage = typeof window.storage!=="undefined" && window.storage;
+
+let saveT;
+function save(){ clearTimeout(saveT); saveT=setTimeout(async()=>{
+  try{
+    if(hasCloudStorage) await window.storage.set(KEY, JSON.stringify(state));
+    else localStorage.setItem(KEY, JSON.stringify(state));
+  } catch(e){ console.error("Could not save",e); }
+  },300); }
+
+function toast(m){ const t=document.getElementById("toast");
+  t.textContent=m; t.classList.add("on"); setTimeout(()=>t.classList.remove("on"),1600); }
+
+function toggleLeaf(leafId){
+  if(state.checked[leafId])delete state.checked[leafId]; else state.checked[leafId]=1;
+  save(); render();
+}
+
+document.addEventListener("click",e=>{
+  const kbox=e.target.closest(".kbox");
+  if(kbox){ toggleLeaf(kbox.closest(".kid").dataset.leaf); return; }
+  const kn=e.target.closest(".kn");
+  if(kn){ toggleLeaf(kn.closest(".kid").dataset.leaf); return; }
+  const box=e.target.closest(".box");
+  if(box){
+    const item=box.closest(".item");
+    const ls=item.dataset.leaf?[item.dataset.leaf]
+      :[...item.querySelectorAll(".kid")].map(k=>k.dataset.leaf);
+    const allDone=ls.every(l=>state.checked[l]);
+    ls.forEach(l=>{ if(allDone)delete state.checked[l]; else state.checked[l]=1; });
+    save(); render(); return;
+  }
+  const name=e.target.closest(".name");
+  if(name){ name.closest(".item").classList.toggle("open"); return; }
+  const head=e.target.closest(".shead");
+  if(head){ const sec=head.closest("section");
+    const any=sec.querySelector(".item.open");
+    sec.querySelectorAll(".item").forEach(i=>i.classList.toggle("open",!any)); }
+});
+
+document.addEventListener("input",e=>{
+  if(e.target.tagName==="TEXTAREA"){
+    const k=e.target.closest(".item").dataset.id, v=e.target.value.trim();
+    if(v)state.notes[k]=v; else delete state.notes[k];
+    save();
+  }
+});
+
+document.getElementById("zone").addEventListener("change",e=>{
+  zone=e.target.value; applyFilter(); });
+
+document.getElementById("q").addEventListener("input",e=>{
+  query=e.target.value.trim().toLowerCase(); applyFilter(); });
+
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{
+  filter=b.dataset.f;
+  document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  applyFilter(); }));
+
+document.getElementById("expandBtn").addEventListener("click",()=>{
+  const any=document.querySelector(".item.open");
+  document.querySelectorAll(".item").forEach(i=>i.classList.toggle("open",!any)); });
+
+document.getElementById("copyBtn").addEventListener("click",()=>{
+  let out="ALSACE TASTING LOG\n\n";
+  DATA.forEach(s=>{
+    const lines=s.items.map(it=>{
+      const ls=leaves(it), dn=ls.filter(l=>state.checked[l]).length;
+      if(!dn&&!state.notes[it.id])return null;
+      let t=`  [${dn===ls.length?"x":" "}] ${it.n}${it.kids?` (${dn}/${ls.length})`:""}`;
+      if(it.kids)it.kids.forEach(k=>{ if(state.checked[k.id])t+=`\n        &#183; ${k.n}`; });
+      if(state.notes[it.id])t+=`\n      &#8594; ${state.notes[it.id]}`;
+      return t;
+    }).filter(Boolean);
+    if(lines.length)out+=s.t.toUpperCase()+"\n"+lines.join("\n")+"\n\n";
+  });
+  out+=`Total: ${allLeaves().filter(l=>state.checked[l]).length} / ${allLeaves().length}`;
+  navigator.clipboard.writeText(out).then(()=>toast("Log copied")).catch(()=>toast("Copy failed"));
+});
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  if(!confirm("Clear every tick and note? This can't be undone."))return;
+  state={checked:{},notes:{}}; save(); render(); toast("Checklist reset"); });
+
+(async function init(){
+  try{
+    if(hasCloudStorage){
+      const r=await window.storage.get(KEY); if(r&&r.value)state=JSON.parse(r.value);
+    } else {
+      const raw=localStorage.getItem(KEY); if(raw)state=JSON.parse(raw);
+    }
+  } catch(e){ /* first run \u2014 nothing saved yet */ }
+  render();
+})();
+</script>
