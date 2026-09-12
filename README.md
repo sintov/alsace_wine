@@ -58,3 +58,11 @@ Coordinates identify cellars. Broad atlas areas use cellar/village geography; en
 The existing v3 localStorage key remains compatible with old backups: missing `producers` becomes an empty array and missing `producerId` becomes an empty link. No existing bottle is matched by name automatically. Personal producers, notes, links and wishlist records are included in JSON backup/restore. A personal producer with linked bottles cannot be deleted until those bottles are unlinked.
 
 `tests/producers.cjs` checks old-v3 migration, directory IDs, name-order search, linking existing and new bottles, wishlist counts, custom producers, safe text, linked-deletion protection, complete backup round trips and mobile layout.
+
+## Producer origins and atlas coverage
+
+Producer cards and atlas places now show reciprocal origin links. Add one or more sourced links per producer, distinguishing wine made from a place from confirmed grape cultivation. Explicit links can be edited or removed. Existing journal bottles with a producer ID, atlas place and origin evidence also provide live links; these follow bottle edits/removal and do not claim land ownership. No vineyard holdings are inferred from cellar addresses or seeded without evidence.
+
+`producerSites` is optional for old v3 backups and preserved by JSON export/import. Links validate producer/place IDs, evidence and relation types. Removing a personal producer removes its manual links; existing linked bottles still prevent deletion.
+
+The headline counter now counts distinct atlas places linked to tasted records across all 72 entries (51 Grands Crus and 21 area/village entries). The denominator derives from the dataset. Wishlist entries and producer-origin reference links do not increase tasting coverage.
