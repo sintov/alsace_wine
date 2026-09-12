@@ -3,7 +3,7 @@
   "private": true,
   "version": "3.0.0",
   "scripts": {
-    "test": "node tests/browser.cjs && node tests/producers.cjs"
+    "test": "node tests/browser.cjs && node tests/producers.cjs && node tests/origins.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
