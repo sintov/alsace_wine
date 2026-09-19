@@ -20,6 +20,7 @@ assert.equal(a.validate(JSON.parse(JSON.stringify(s))).targets[0],s.targets[0]);
 s.wines[0].parcelGeology='granite';s.wines[0].parcelGeologyEvidence='Parcel technical sheet';a.set(s);
 assert.equal(a.naFor('Riesling','granite',site),undefined,'sourced parcel overrides broad reference');
 s.wines=[];a.set(s);assert(a.naFor('Riesling','granite',site).automatic);assert.equal(a.targetProgress(a.coverageIndex()),0);
-a.view('site-geo','ribeauville');const html=a.matrix();assert(html.includes('site:ld-rosenbourg'));assert(!html.includes('data-area="site:ld-patergarten"'));
+a.view('site-geo','ribeauville');const html=a.matrix();assert(html.includes('Grand Cru'));assert(!html.includes('data-area="site:ld-rosenbourg"'));assert(!html.includes('data-area="site:ld-patergarten"'));
+a.view('grape-geo','all');const choices=a.matrix();assert(!choices.includes('value="site:ld-patergarten"'));assert(!choices.includes('value="site:ld-rosenbourg"'));assert(choices.includes('· Grand Cru'));
 assert.throws(()=>a.validate({...s,targets:['Riesling|alluvial|site:missing']}));
 console.log('PASS: site coverage, isolation, targets and backups, catalogue examples, safe exclusions, parcel overrides, filtering');

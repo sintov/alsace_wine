@@ -104,7 +104,7 @@ Examples represented in the catalogue: all of Ostertag's named sites (Fronholz, 
 
 ## Atlas-site matrix refinement
 
-Coverage now supports selecting any atlas entry in the geographical selector and a third view, “One grape · atlas sites × geology”, with area filtering and search. Exact-site rows match only that recorded origin; they do not silently attribute neighbouring sites or parent vineyards. Existing area totals retain their meaning. Site targets use `site:<stable-id>` scope and survive backup import/export; deleting an unused personal site also removes its targets and exclusions.
+The matrix geographical selector offers only regions and Grands Crus. Its third view, “One grape · Grands Crus × geology”, supports area filtering and search. Villages, clos, other named vineyards and personal additions remain available in the Atlas and journal, but are omitted from matrix geographical choices to keep this view manageable. Existing saved site targets and exclusions remain intact. Exact-site rows match only that recorded origin; they do not silently attribute neighbouring sites or parent vineyards. Existing area totals retain their meaning. Site targets use `site:<stable-id>` scope and survive backup import/export; deleting an unused personal site also removes its targets and exclusions.
 
 The Atlas type filter explicitly lists Grand Cru, Village / area, Clos and Named vineyard / lieu-dit, with catalogue totals and a personal-additions option.
 
