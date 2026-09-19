@@ -113,3 +113,14 @@ The Atlas type filter explicitly lists Grand Cru, Village / area, Clos and Named
 Three additions were checked on primary producer pages on 2026-09-19: Patergarten (Kaysersberg valley, gravel; exact commune left unspecified by the source), Rosenbourg (Riquewihr, chalk/silica/silt), and Letzenberg (Ingersheim, marl/clay/limestone). Sources: https://www.blanck.com/en/The-Wines/The-terroirs/The-lieux-dits/ and https://www.jb-adam.com/en/content/13-terroirs.html . Their explicitly documented varieties show ○ as reference examples without creating tasting records. These are positive examples, not exhaustive planting lists. This update expands the catalogue to 72 named sites beyond the Grands Crus; it does not claim completeness.
 
 Run `node tests/site-matrix.cjs` for dependency-free coverage and migration regression checks.
+
+
+## Evidence-aware matrix audit (2026-09-19)
+
+See [the complete reference audit](docs/matrix-reference-audit.md) for all 51 Grand Cru profiles, all seven regional inventories, source links and remaining limitations. This audit supersedes earlier descriptions of the six northern named-site geology assignments.
+
+The default matrix now shows only axes supported by source examples or personal records/targets/exclusions. “All combinations · include unknowns” restores the full research grid. Cells distinguish sourced examples (○), unverified combinations (?), reference mismatches (×) and tasted journal records (✓). Regional examples are aggregated as exact site/grape/geology tuples, never by multiplying separate regional grape and geology lists. This is geographical exploration, not certification that a wine qualifies for a Grand Cru label.
+
+The atlas now displays documented varieties. Two additional geology categories distinguish marl–sandstone and limestone–sandstone from the three-component category. Saved wine entries and old category IDs remain valid; coverage inferred from corrected reference geology may change. Back up personal data as usual through the existing export function.
+
+Run `node tests/site-matrix.cjs` for the dependency-free reference and coverage checks; `npm test` also runs the existing Playwright suite when a browser is installed.
