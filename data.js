@@ -1,4 +1,3 @@
-/* Reference data reviewed 2026-09-12. Site facts are sourced; learning questions are editorial. */
 window.ALSACE_DATA = {
   "regions": [
     {
@@ -50,12 +49,22 @@ window.ALSACE_DATA = {
       "name": "Altenberg de Bergbieten",
       "kind": "Grand Cru",
       "region": "strasbourg",
-      "village": "BERGBIETEN",
-      "soil": "Consult site-specific reference",
-      "exposure": "",
-      "altitude": "",
-      "source": "https://www.vinsalsace.com/en/grands-crus/pure-expression/",
-      "reviewed": "2026-09-12"
+      "village": "Bergbieten",
+      "soil": "Gypsum marl and limestone",
+      "exposure": "South / southeast",
+      "altitude": "210–265 m",
+      "source": "https://mochel.alsace/nos-terroirs/le-grand-cru-altenberg-de-bergbieten/",
+      "reviewed": "2026-09-19",
+      "geology": "marl-gypsum",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "Domaine Frederic Mochel whole-vineyard profile: gypsum marls, with limestone and dolomite towards the summit.",
+      "grapeEvidenceSource": "https://mochel.alsace/nos-terroirs/le-grand-cru-altenberg-de-bergbieten/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "altenberg-de-bergheim",
@@ -67,7 +76,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-bergheim/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "blend"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-bergheim/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "altenberg-de-wolxheim",
@@ -79,7 +97,14 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-wolxheim/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-wolxheim/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "brand",
@@ -91,7 +116,21 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "Up to 380 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/brand/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat",
+        "Pinot Noir",
+        "Sylvaner",
+        "Pinot Blanc",
+        "Chasselas",
+        "Auxerrois"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/brand/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited. CIVA explicitly describes additional plantings beyond the Grand Cru wines."
     },
     {
       "id": "bruderthal",
@@ -103,7 +142,16 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "225 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/bruderthal/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/bruderthal/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "eichberg",
@@ -115,7 +163,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/eichberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/eichberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "engelberg",
@@ -127,7 +183,15 @@ window.ALSACE_DATA = {
       "exposure": "South",
       "altitude": "250 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/engelberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/engelberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "florimont",
@@ -139,7 +203,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East and East",
       "altitude": "250 to 280 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/florimont/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/florimont/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "frankstein",
@@ -151,7 +224,16 @@ window.ALSACE_DATA = {
       "exposure": "East / South-East",
       "altitude": "220 to 330 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/frankstein/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/frankstein/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "froehn",
@@ -163,7 +245,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/froehn/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/froehn/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "furstentum",
@@ -175,7 +266,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/furstentum/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/furstentum/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "geisberg",
@@ -187,7 +286,13 @@ window.ALSACE_DATA = {
       "exposure": "South",
       "altitude": "250 to 320 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/geisberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/geisberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "gloeckelberg",
@@ -199,7 +304,15 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "250 to 360 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/gloeckelberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/gloeckelberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "goldert",
@@ -211,7 +324,16 @@ window.ALSACE_DATA = {
       "exposure": "East and South-east",
       "altitude": "Between 230 and 330 m",
       "source": "https://www.vinsalsace.com/en/grands-crus/goldert/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/goldert/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "hatschbourg",
@@ -223,7 +345,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/hatschbourg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/hatschbourg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "hengst",
@@ -235,7 +366,17 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "270 to 360 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/hengst/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat",
+        "Pinot Noir"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/hengst/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kaefferkopf",
@@ -247,7 +388,16 @@ window.ALSACE_DATA = {
       "exposure": "East",
       "altitude": "230 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kaefferkopf/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "blend"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kaefferkopf/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kanzlerberg",
@@ -259,7 +409,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/kanzlerberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kanzlerberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kastelberg",
@@ -271,7 +429,13 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "240 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kastelberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kastelberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kessler",
@@ -283,7 +447,16 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "300 to 390 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kessler/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kessler/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kirchberg-de-barr",
@@ -295,7 +468,17 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "220 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-barr/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat",
+        "Pinot Noir"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-barr/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kirchberg-de-ribeauville",
@@ -307,7 +490,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-West",
       "altitude": "270 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-ribeauville/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-ribeauville/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "kitterle",
@@ -319,7 +511,15 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East, South-West",
       "altitude": "270 to 360 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/kitterle/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kitterle/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "mambourg",
@@ -331,7 +531,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/mambourg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/mambourg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "mandelberg",
@@ -343,7 +552,15 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East and South-West",
       "altitude": "205 to 256 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/mandelberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/mandelberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "marckrain",
@@ -355,7 +572,14 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/marckrain/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/marckrain/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "moenchberg",
@@ -367,7 +591,15 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "230 to 260 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/moenchberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/moenchberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "muenchberg",
@@ -379,7 +611,13 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/muenchberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/muenchberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "ollwiller",
@@ -391,7 +629,16 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "260 and 330 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/ollwiller/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/ollwiller/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "osterberg",
@@ -403,7 +650,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "250 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/osterberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/osterberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "pfersigberg",
@@ -415,7 +671,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/pfersigberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/pfersigberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "pfingstberg",
@@ -427,7 +692,16 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "270 to 370 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/pfingstberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/pfingstberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "praelatenberg",
@@ -439,7 +713,16 @@ window.ALSACE_DATA = {
       "exposure": "East, South-East",
       "altitude": "250 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/praelatenberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/praelatenberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "rangen",
@@ -451,7 +734,16 @@ window.ALSACE_DATA = {
       "exposure": "South",
       "altitude": "320 to 450 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/rangen/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/rangen/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "rosacker",
@@ -463,7 +755,15 @@ window.ALSACE_DATA = {
       "exposure": "East, South-East",
       "altitude": "260 to 330 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/rosacker/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/rosacker/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "saering",
@@ -475,7 +775,16 @@ window.ALSACE_DATA = {
       "exposure": "East, South-East",
       "altitude": "260 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/saering/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/saering/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "schlossberg",
@@ -487,7 +796,16 @@ window.ALSACE_DATA = {
       "exposure": "South",
       "altitude": "230 to 400 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/schlossberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/schlossberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "schoenenbourg",
@@ -499,7 +817,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/schoenenbourg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/schoenenbourg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "sommerberg",
@@ -511,7 +837,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/sommerberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Pinot Gris",
+        "Gewurztraminer"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sommerberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "sonnenglanz",
@@ -523,7 +857,15 @@ window.ALSACE_DATA = {
       "exposure": "South-East",
       "altitude": "between 220 and 270 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/sonnenglanz/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sonnenglanz/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "spiegel",
@@ -535,7 +877,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/spiegel/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/spiegel/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "sporen",
@@ -547,7 +898,14 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/sporen/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sporen/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "steinert",
@@ -559,7 +917,15 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/steinert/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steinert/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "steingrubler",
@@ -571,7 +937,15 @@ window.ALSACE_DATA = {
       "exposure": "South/ South-East",
       "altitude": "230 to 350 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/steingrubler/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steingrubler/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "steinklotz",
@@ -583,7 +957,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "200 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/steinklotz/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Pinot Noir"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steinklotz/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "vorbourg",
@@ -595,7 +978,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "210 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/vorbourg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Pinot Noir"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/vorbourg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "wiebelsberg",
@@ -607,7 +999,14 @@ window.ALSACE_DATA = {
       "exposure": "South-West, South-East",
       "altitude": "250 to 300 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/wiebelsberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/wiebelsberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "wineck-schlossberg",
@@ -619,7 +1018,16 @@ window.ALSACE_DATA = {
       "exposure": "South, South-East",
       "altitude": "280 and 400 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/wineck-schlossberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/wineck-schlossberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "winzenberg",
@@ -631,7 +1039,15 @@ window.ALSACE_DATA = {
       "exposure": "South and South-East",
       "altitude": "240 and 320 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/winzenberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/winzenberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "zinnkoepfle",
@@ -643,7 +1059,16 @@ window.ALSACE_DATA = {
       "exposure": "South-West, South East",
       "altitude": "200 to 440 metres",
       "source": "https://www.vinsalsace.com/en/grands-crus/zinnkoepfle/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris",
+        "Muscat"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/zinnkoepfle/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     },
     {
       "id": "zotzenberg",
@@ -655,7 +1080,16 @@ window.ALSACE_DATA = {
       "exposure": "",
       "altitude": "",
       "source": "https://www.vinsalsace.com/en/grands-crus/zotzenberg/",
-      "reviewed": "2026-09-12"
+      "reviewed": "2026-09-19",
+      "documentedGrapes": [
+        "Sylvaner",
+        "Riesling",
+        "Gewurztraminer",
+        "Pinot Gris"
+      ],
+      "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
+      "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/zotzenberg/",
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
     }
   ],
   "places": [

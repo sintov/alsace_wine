@@ -3,7 +3,7 @@
   "private": true,
   "version": "4.0.0",
   "scripts": {
-    "test": "node tests/browser.cjs && node tests/producers.cjs && node tests/origins.cjs && node tests/matrix.cjs"
+    "test": "node tests/site-matrix.cjs && node tests/browser.cjs && node tests/producers.cjs && node tests/origins.cjs && node tests/matrix.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
