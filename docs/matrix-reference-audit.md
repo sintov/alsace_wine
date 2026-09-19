@@ -1,3 +1,5 @@
+> Superseded in part: the follow-up [false-exclusion review](false-exclusion-review.md) removes automatic × marks. The inventory below is the earlier reference snapshot, not a certificate of parcel-level accuracy.
+
 # Matrix reference audit — 19 September 2026
 
 ## Scope and interpretation
