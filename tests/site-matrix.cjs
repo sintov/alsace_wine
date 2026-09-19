@@ -1,0 +1,25 @@
+// Data and coverage regression checks; no browser dependency.
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
+const root=path.resolve(__dirname,'..'),ctx=vm.createContext({window:{}});
+for(const file of ['data.js','sites.js','producers.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
+let app=fs.readFileSync(path.join(root,'app.js'),'utf8');
+app=app.slice(0,app.indexOf("$('#search').oninput="))+`globalThis.api={empty,validate,coverageIndex,cellData,naFor,matrixCell,targetProgress,atlas,matrix,set(s){state=validate(s);rebuildSites()},view(mode,area){mxMode=mode;mxSiteArea=area}};})();`;
+vm.runInContext(app,ctx);const a=ctx.api,site='site:ld-patergarten';
+let s=a.empty();a.set(s);
+assert(a.naFor('Riesling','granite',site).automatic);
+assert.equal(a.naFor('Gewurztraminer','alluvial',site),undefined,'unknown grape is never an exclusion');
+assert.equal(a.naFor('Gewurztraminer','limestone','all'),undefined,'no broad grape/rock prohibition');
+assert(a.matrixCell(a.coverageIndex(),'Riesling','alluvial',site).includes('documented by a producer'));
+assert(a.atlas().includes('Named vineyard / lieu-dit'));
+for(const id of ['ld-patergarten','ld-rosenbourg','ld-letzenberg'])assert(ctx.window.ALSACE_SITES.lieux.some(x=>x.id===id));
+s.targets=['Riesling|alluvial|'+site];s.wines=[{id:'one',producer:'Example',status:'tasted',grape:'Riesling',site:'ld-patergarten',originEvidence:'Label'}];a.set(s);
+assert.equal(a.cellData(a.coverageIndex(),'Riesling','alluvial',site).tasted.length,1);
+assert.equal(a.cellData(a.coverageIndex(),'Riesling','alluvial','site:ld-rosenbourg').tasted.length,0);
+assert.equal(a.targetProgress(a.coverageIndex()),1);
+assert.equal(a.validate(JSON.parse(JSON.stringify(s))).targets[0],s.targets[0]);
+s.wines[0].parcelGeology='granite';s.wines[0].parcelGeologyEvidence='Parcel technical sheet';a.set(s);
+assert.equal(a.naFor('Riesling','granite',site),undefined,'sourced parcel overrides broad reference');
+s.wines=[];a.set(s);assert(a.naFor('Riesling','granite',site).automatic);assert.equal(a.targetProgress(a.coverageIndex()),0);
+a.view('site-geo','ribeauville');const html=a.matrix();assert(html.includes('site:ld-rosenbourg'));assert(!html.includes('data-area="site:ld-patergarten"'));
+assert.throws(()=>a.validate({...s,targets:['Riesling|alluvial|site:missing']}));
+console.log('PASS: site coverage, isolation, targets and backups, catalogue examples, safe exclusions, parcel overrides, filtering');
