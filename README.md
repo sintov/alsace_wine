@@ -1,3 +1,5 @@
+> Current exclusion policy: automatic geology exclusions were removed after a confirmed counterexample. × now means a personal exclusion only. See [the follow-up review](docs/false-exclusion-review.md) for the fix and the factual verification limits. Earlier automatic-X descriptions below are historical.
+
 # Alsace · A living wine atlas
 
 A dependency-free static application for GitHub Pages. English UI, responsive desktop/mobile layout, no backend, account, analytics or build step.

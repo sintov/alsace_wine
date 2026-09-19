@@ -75,7 +75,7 @@ const fs = require('node:fs');
  await cell('Sylvaner','limestone').click();await page.locator('[data-action=mx-record]').click();assert.equal(await page.locator('[name=grape]').inputValue(),'Sylvaner');await page.locator('#close-dialog').click();assert.ok((await label('Sylvaner','limestone')).includes(': tasted')===false,'opening the form creates no checkmark');
  await cell('Sylvaner','limestone').click();await page.locator('[data-action=mx-record]').click();await page.locator('[name=producer]').fill('Quick producer');await page.locator('[name=site]').selectOption('ld-clos-windsbuhl');await page.locator('[name=originEvidence]').fill('Label');await page.locator('#wine-form button[type=submit]').click();await closed();
  assert.ok((await label('Sylvaner','limestone')).includes('tasted: 1'));assert.ok((await page.locator('#stats').textContent()).includes('1 / 1'));
- await cell('Auxerrois','granite').click();page.once('dialog',d=>d.accept('Not grown on this rock'));await page.locator('[data-action=mx-na]').click();assert.ok((await label('Auxerrois','granite')).includes('not applicable: Not grown on this rock'));
+ await cell('Auxerrois','granite').click();page.once('dialog',d=>d.accept('Not grown on this rock'));await page.locator('[data-action=mx-na]').click();assert.ok((await label('Auxerrois','granite')).includes('your exclusion (not a geological prohibition): Not grown on this rock'));
  await page.locator('#close-dialog').click();
  // Quick entry: essential details only, origin later
  await page.locator('#quick-wine').click();await page.locator('#wine-form [name=producer]').fill('Visit grower');await page.locator('#wine-form [name=cuvee]').fill('Quick bottle');await page.locator('#wine-form button[type=submit]').click();await closed();

@@ -64,7 +64,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "Domaine Frederic Mochel whole-vineyard profile: gypsum marls, with limestone and dolomite towards the summit.",
       "grapeEvidenceSource": "https://mochel.alsace/nos-terroirs/le-grand-cru-altenberg-de-bergbieten/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "altenberg-de-bergheim",
@@ -85,7 +86,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-bergheim/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "altenberg-de-wolxheim",
@@ -104,7 +106,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/altenberg-de-wolxheim/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "brand",
@@ -130,7 +133,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/brand/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited. CIVA explicitly describes additional plantings beyond the Grand Cru wines."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited. CIVA explicitly describes additional plantings beyond the Grand Cru wines.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "bruderthal",
@@ -151,7 +155,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/bruderthal/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "eichberg",
@@ -171,7 +176,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/eichberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "engelberg",
@@ -191,7 +197,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/engelberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "florimont",
@@ -212,7 +219,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/florimont/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "frankstein",
@@ -233,7 +241,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/frankstein/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "froehn",
@@ -254,7 +263,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/froehn/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "furstentum",
@@ -274,7 +284,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/furstentum/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "geisberg",
@@ -292,7 +303,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/geisberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "gloeckelberg",
@@ -312,7 +324,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/gloeckelberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Granite is the dominant reference. CIVA also describes schist and sandstone debris uphill and colluvium at the foot. It does not establish the precise grape-to-parcel distribution."
     },
     {
       "id": "goldert",
@@ -333,7 +346,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/goldert/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "hatschbourg",
@@ -354,7 +368,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/hatschbourg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "hengst",
@@ -376,7 +391,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/hengst/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "CIVA summarizes this site as marl-limestone-sandstone and describes calcareous, sandstone and clayey soils. The summary does not establish the soil of every producer parcel."
     },
     {
       "id": "kaefferkopf",
@@ -397,7 +413,26 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kaefferkopf/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "A heterogeneous vineyard: CIVA describes granite uphill, sandstone, shelly limestone and Keuper clay lower down, with loess and alluvial cover. Mixed/other is a catalogue summary, not a single uniform soil or grounds to exclude granite/limestone parcels.",
+      "referenceExamples": [
+        {
+          "grape": "Riesling",
+          "geology": "granite",
+          "producer": "Domaine Maurice Schoech",
+          "wine": "Riesling Grand Cru Kaefferkopf",
+          "source": "https://www.domaineschoech.com/vins-alsace-bio/",
+          "scope": "Producer describes the parcels for this wine as granite-derived. This supports this example, not all parcels of Kaefferkopf."
+        },
+        {
+          "grape": "Gewurztraminer",
+          "geology": "granite",
+          "producer": "Domaine Maurice Schoech",
+          "wine": "Gewurztraminer Grand Cru Kaefferkopf",
+          "source": "https://www.domaineschoech.com/vins-alsace-bio/",
+          "scope": "Producer describes the parcels for this wine as granite-derived. This supports this example, not all parcels of Kaefferkopf."
+        }
+      ]
     },
     {
       "id": "kanzlerberg",
@@ -417,7 +452,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kanzlerberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "kastelberg",
@@ -435,7 +471,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kastelberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "kessler",
@@ -456,7 +493,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kessler/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "kirchberg-de-barr",
@@ -478,7 +516,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-barr/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "kirchberg-de-ribeauville",
@@ -499,7 +538,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kirchberg-de-ribeauville/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "kitterle",
@@ -519,7 +559,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/kitterle/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "mambourg",
@@ -540,7 +581,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/mambourg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "mandelberg",
@@ -560,7 +602,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/mandelberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "marckrain",
@@ -579,7 +622,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/marckrain/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "moenchberg",
@@ -599,7 +643,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/moenchberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "muenchberg",
@@ -617,7 +662,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/muenchberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "ollwiller",
@@ -638,7 +684,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/ollwiller/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "osterberg",
@@ -659,7 +706,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/osterberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "pfersigberg",
@@ -680,7 +728,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/pfersigberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "pfingstberg",
@@ -701,7 +750,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/pfingstberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "praelatenberg",
@@ -722,7 +772,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/praelatenberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "rangen",
@@ -743,7 +794,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/rangen/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "rosacker",
@@ -763,7 +815,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/rosacker/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "saering",
@@ -784,7 +837,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/saering/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "schlossberg",
@@ -805,7 +859,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/schlossberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "schoenenbourg",
@@ -825,7 +880,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/schoenenbourg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "sommerberg",
@@ -845,7 +901,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sommerberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "sonnenglanz",
@@ -865,7 +922,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sonnenglanz/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "spiegel",
@@ -886,7 +944,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/spiegel/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "sporen",
@@ -905,7 +964,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/sporen/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "steinert",
@@ -925,7 +985,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steinert/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "steingrubler",
@@ -945,7 +1006,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steingrubler/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "steinklotz",
@@ -966,7 +1028,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/steinklotz/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "vorbourg",
@@ -987,7 +1050,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/vorbourg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "wiebelsberg",
@@ -1006,7 +1070,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/wiebelsberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "wineck-schlossberg",
@@ -1027,7 +1092,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/wineck-schlossberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "winzenberg",
@@ -1047,7 +1113,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/winzenberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "zinnkoepfle",
@@ -1068,7 +1135,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/zinnkoepfle/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     },
     {
       "id": "zotzenberg",
@@ -1089,7 +1157,8 @@ window.ALSACE_DATA = {
       ],
       "basis": "CIVA site profile: whole-vineyard geology and explicitly described varieties. Positive examples, not an exhaustive planting census or an appellation permission list.",
       "grapeEvidenceSource": "https://www.vinsalsace.com/en/grands-crus/zotzenberg/",
-      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited."
+      "grapeEvidenceScope": "Whole-site reference; parcel-level variation may exist. Varieties absent from this list are unverified, not prohibited.",
+      "geologyNote": "Whole-vineyard classification, not a parcel survey. Other local formations are not ruled out. For a specific bottle, prefer a producer parcel reference."
     }
   ],
   "places": [
