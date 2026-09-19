@@ -1,9 +1,9 @@
 {
   "name": "alsace-wine-atlas",
   "private": true,
-  "version": "3.0.0",
+  "version": "4.0.0",
   "scripts": {
-    "test": "node tests/browser.cjs && node tests/producers.cjs && node tests/origins.cjs"
+    "test": "node tests/browser.cjs && node tests/producers.cjs && node tests/origins.cjs && node tests/matrix.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"
