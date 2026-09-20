@@ -3,7 +3,7 @@ const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/st
 const root=path.resolve(__dirname,'..'),ctx=vm.createContext({window:{}});
 for(const file of ['data.js','sites.js','producers.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),ctx);
 let app=fs.readFileSync(path.join(root,'app.js'),'utf8');
-app=app.slice(0,app.indexOf("$('#search').oninput="))+`globalThis.api={empty,validate,coverageIndex,cellData,naFor,matrixCell,targetProgress,atlas,matrix,matrixAxes,referenceSites,referenceNote,set(s){state=validate(s);rebuildSites()},view(mode,area,evidence='documented'){mxMode=mode;mxSiteArea=area;mxArea=area;mxEvidence=evidence}};})();`;
+app=app.slice(0,app.indexOf("$('#search').oninput="))+`globalThis.api={empty,validate,coverageIndex,cellData,naFor,matrixCell,targetProgress,atlas,matrix,matrixAxes,referenceSites,referenceNote,set(s){state=validate(s);rebuildSites()},view(mode,area,evidence='documented',grape='Riesling',search=''){mxGrape=grape;query=search;mxMode=mode;mxSiteArea=area;mxArea=area;mxEvidence=evidence}};})();`;
 vm.runInContext(app,ctx);const a=ctx.api,site='site:ld-patergarten';
 let s=a.empty();a.set(s);
 assert.equal(a.naFor('Riesling','granite',site),undefined);
@@ -79,3 +79,30 @@ assert(a.matrixCell(a.coverageIndex(),'Riesling','granite','site:kaefferkopf').i
 assert(!a.referenceSites('Pinot Gris','granite','site:kaefferkopf').length,'do not spread parcel evidence to other grapes');
 assert(a.referenceSites('Riesling','granite','colmar').some(e=>e.source.includes('domaineschoech.com')));
 a.view('grape-geo','site:kaefferkopf');assert(a.matrixAxes(a.coverageIndex()).cols.includes('granite'));
+
+// Independently sourced identity list: counts alone cannot detect a replacement.
+const official=JSON.parse(fs.readFileSync(path.join(__dirname,'fixtures/grands-crus.json'),'utf8'));
+assert.equal(official.ids.length,51);
+assert.deepEqual([...D.crus.map(s=>s.id)].sort(),official.ids);
+a.set(a.empty());
+for(const grape of allGrapes){
+ a.view('site-geo','all','documented',grape);
+ const axes=a.matrixAxes(a.coverageIndex());
+ assert.equal(axes.rows.length,51,'missing cru for '+grape);
+ assert(axes.cols.length,'empty geography for '+grape);
+ for(const id of official.ids)assert(axes.rows.includes('site:'+id),'missing '+id+' for '+grape);
+ a.view('area-geo','all','documented',grape);
+ assert.equal(a.matrixAxes(a.coverageIndex()).rows.length,7,'missing region for '+grape);
+}
+for(const region of D.regions){
+ a.view('site-geo',region.id,'documented','Chardonnay');
+ assert.equal(a.matrixAxes(a.coverageIndex()).rows.length,D.crus.filter(s=>s.region===region.id).length);
+}
+a.view('site-geo','ribeauville','documented','Muscat','Bergheim');
+assert.deepEqual([...a.matrixAxes(a.coverageIndex()).rows].sort(),['site:altenberg-de-bergheim','site:kanzlerberg']);
+a.view('grape-geo','site:kastelberg');
+assert.deepEqual([...a.matrixAxes(a.coverageIndex()).rows],['Riesling'],'retain compact grape rows for a selected cru');
+a.view('grape-geo','all');
+for(const id of official.ids)assert(a.matrix().includes('value="site:'+id+'"'),'missing dropdown entry '+id);
+for(const cru of D.crus)assert(a.atlas().includes('<h4>'+cru.name+'</h4>'),'missing atlas card '+cru.id);
+console.log('PASS: canonical 51 identities, atlas cards and selector; all crus and all regions retained for every grape; Bergheim search; compact grape rows preserved');

@@ -88,10 +88,12 @@ function atlas(){
  html+=`<div class="filters">${selectFilter('region-filter','Area',[['all','All regions'],...D.regions.map(r=>[r.id,r.name])],region)}${selectFilter('kind-filter','Site type',[['all',`All types (${sites.length})`],...siteKinds.map(k=>[k,`${({'Grand Cru':'Grand Cru','Area / village':'Village / area','Clos':'Clos','Lieu-dit':'Named vineyard / lieu-dit'})[k]} (${sites.filter(s=>s.kind===k).length})`]),['personal',`Personal additions (${state.personalSites.length})`]],kind)}${selectFilter('soil-filter','Geology category',[['all','All settings'],...geoCats.map(c=>[c.id,c.name]),['unknown','Not classified']],soil)}${selectFilter('coverage-filter','Your exploration',[['all','All'],['seen','Wine documented'],['unseen','No wine documented'],['want','Explore later']],coverage)}</div>`;
  html+='<div class="actions"><button data-action="add-site">+ Add a missing vineyard</button></div>';
  html+='<p class="small">Geology categories normalize the sourced wording for filtering; whole-site references simplify parcel variation, and mixed formations stay one explicit mixed setting. Absence from this catalogue never proves a site does not exist — add it above with a source.</p>';
- let count=0;
- for(const r of D.regions){if(region!=='all'&&region!==r.id)continue;const list=sites.filter(s=>s.region===r.id&&(kind==='all'||kind==='personal'&&s.id.startsWith('psite-')||s.kind===kind)&&(soil==='all'||(soil==='unknown'?!siteGeology(s):siteGeology(s)===soil))&&match(s.name,s.aliases||[],s.village,s.soil,geoName(siteGeology(s)),s.note,siteWines(s.id).map(w=>`${w.producer} ${w.cuvee} ${w.notes}`))&&(coverage==='all'||coverage==='seen'&&siteWines(s.id).length||coverage==='unseen'&&!siteWines(s.id).length||coverage==='want'&&want(s.id))).sort((a,b)=>(kindRank[a.kind]??9)-(kindRank[b.kind]??9)||a.name.localeCompare(b.name));if(!list.length)continue;count+=list.length;
+ const summaryAt=html.length;
+ let count=0,cruCount=0;
+ for(const r of D.regions){if(region!=='all'&&region!==r.id)continue;const list=sites.filter(s=>s.region===r.id&&(kind==='all'||kind==='personal'&&s.id.startsWith('psite-')||s.kind===kind)&&(soil==='all'||(soil==='unknown'?!siteGeology(s):siteGeology(s)===soil))&&match(s.name,s.aliases||[],s.village,s.soil,geoName(siteGeology(s)),s.note,siteWines(s.id).map(w=>`${w.producer} ${w.cuvee} ${w.notes}`))&&(coverage==='all'||coverage==='seen'&&siteWines(s.id).length||coverage==='unseen'&&!siteWines(s.id).length||coverage==='want'&&want(s.id))).sort((a,b)=>(kindRank[a.kind]??9)-(kindRank[b.kind]??9)||a.name.localeCompare(b.name));if(!list.length)continue;count+=list.length;cruCount+=list.filter(s=>s.kind==='Grand Cru').length;
  html+=`<section class="region"><div class="eyeline">REGION ${r.number}</div><h3>${esc(r.name)} <span>${list.length} places shown</span></h3><p class="region-desc">${esc(r.description)}</p><div class="grid">${list.map(siteCard).join('')}</div></section>`;
  }
+ html=html.slice(0,summaryAt)+`<p class="count-line">Showing ${count} of ${sites.length} places · ${cruCount} of ${D.crus.length} Grands Crus. Filters and search can hide places. <button data-action="atlas-reset">Clear all filters and search</button> <button data-action="atlas-all-crus">Show all 51 Grands Crus</button></p>`+html.slice(summaryAt);
  return html+(count?'':'<div class="empty">No places match these filters. Try another area or clear the search.</div>')+catalogueReport();
 }
 function catalogueReport(){
@@ -193,8 +195,10 @@ function matrixAxes(idx){
  for(const r of allRows)for(const geo of allCols){const [g,,a]=args(r,geo),c=cellData(idx,g,geo,a);
   if(referenceSites(g,geo,a).length||c.tasted.length||c.wishlist.length||c.blend.length||isTarget(g,geo,a)||state.excluded.some(e=>e.key===targetKey(g,geo,a)))supported.add(r+'|'+geo);
  }
- const rows=mxEvidence==='all'?allRows:allRows.filter(r=>allCols.some(geo=>supported.has(r+'|'+geo)));
- const cols=mxEvidence==='all'?allCols:allCols.filter(geo=>rows.some(r=>supported.has(r+'|'+geo)));
+ // Missing grape evidence must never remove a geographical place from the map.
+ const rows=mxEvidence==='all'||mxMode!=='grape-geo'?allRows:allRows.filter(r=>allCols.some(geo=>supported.has(r+'|'+geo)));
+ const geographicGeologies=new Set(mxMode==='grape-geo'?[]:sites.filter(s=>mxMode==='site-geo'?rows.includes('site:'+s.id):rows.includes(s.region)).map(s=>siteGeology(s)||''));
+ const cols=mxEvidence==='all'?allCols:allCols.filter(geo=>geographicGeologies.has(geo)||rows.some(r=>supported.has(r+'|'+geo)));
  return {rows,cols,hiddenRows:allRows.length-rows.length,hiddenCols:allCols.length-cols.length};
 }
 function matrixCell(idx,g,geo,area){
@@ -216,7 +220,8 @@ function matrix(){
  html+=`<div class="filters">${selectFilter('mx-mode','View',[['grape-geo','Grapes × geology'],['area-geo','One grape · areas × geology'],['site-geo','One grape · Grands Crus × geology']],mxMode)}${mxMode==='grape-geo'?selectFilter('mx-area','Geographical area',[['all','All areas · overview'],...D.regions.map(r=>[r.id,r.name]),...sites.filter(s=>s.kind==='Grand Cru').map(s=>['site:'+s.id,s.name+' · '+s.village+' · Grand Cru'])],mxArea):selectFilter('mx-grape','Grape',[...singleGrapes.map(g=>[g,g]),['blend','Blend / field blend']],mxGrape)}</div>`;
  html+=selectFilter('mx-evidence','Show',[['documented','Documented combinations & my records'],['all','All combinations · include unknowns']],mxEvidence);
  if(mxMode==='site-geo')html+=selectFilter('mx-site-area','Filter Grands Crus by area',[['all','All areas'],...D.regions.map(r=>[r.id,r.name])],mxSiteArea);
- html+=`<p class="small">${mxEvidence==='documented'?`Showing axes supported by sourced examples or your records and targets. ${hiddenRows} rows and ${hiddenCols} columns without supporting entries are hidden, not ruled out.`:'Full research view: visible cells do not imply that a combination exists.'} A ? means the exact combination is unverified. Geography includes plantings within a Grand Cru site, including wines sold under another designation; this is not an appellation eligibility checklist.</p>`;
+ if(mxMode==='site-geo')html+=`<p class="count-line">Showing ${rows.length} of ${D.crus.length} Grands Crus. Only the area filter and search hide sites, never the selected grape. <button data-action="matrix-all-crus">Show all 51 Grands Crus</button></p>`;
+ html+=`<p class="small">${mxEvidence==='documented'?(mxMode!=='grape-geo'?'All geographical rows matching your filters remain visible. Geology columns show site references and your records; ? means no matching grape example is documented.':`Showing axes supported by sourced examples or your records and targets. ${hiddenRows} rows and ${hiddenCols} columns without supporting entries are hidden, not ruled out.`):'Full research view: visible cells do not imply that a combination exists.'} A ? means the exact combination is unverified. Geography includes plantings within a Grand Cru site, including wines sold under another designation; this is not an appellation eligibility checklist.</p>`;
  if(!rows.length||!cols.length)html+='<div class="callout">No supported combinations for this selection yet. Choose “All combinations · include unknowns” to investigate or add a sourced record.</div>';
  html+=`<p class="count-line">${dc.n} distinct grape × geology × area combination${dc.n===1?'':'s'} tasted${dc.b?` · ${dc.b} blend combination${dc.b===1?'':'s'}`:''} · targets tasted ${targetProgress(idx)} / ${state.targets.length}. Only fully classified records count as exact combinations; there is deliberately no “percentage of Alsace”.</p>`;
  html+=`<div class="mx-legend small"><span><b class="mx-tasted">✓</b> Tasted (encounters)</span><span><b>◆</b> Target</span><span><b class="mx-doc">○</b> Sourced example or wishlist wine</span><span><b>?</b> Unverified combination</span><span><b>×</b> Your exclusion · tap to review</span><span><b class="mx-blend-demo">b</b> Blend encounters only</span></div>`;
@@ -291,6 +296,8 @@ document.addEventListener('click',async e=>{
  const nav=e.target.closest('[data-tab]');if(nav){tab=nav.dataset.tab;query='';$('#search').value='';render();return}
  const b=e.target.closest('[data-action]');if(!b)return;const id=b.dataset.id;
  switch(b.dataset.action){
+ case 'atlas-reset':case 'atlas-all-crus':region=soil=coverage='all';kind=b.dataset.action==='atlas-all-crus'?'Grand Cru':'all';query='';$('#search').value='';render();break;
+ case 'matrix-all-crus':mxSiteArea='all';query='';$('#search').value='';render();break;
  case 'link-origin':openOrigin(id);break;
  case 'site-link-producer':openOrigin('',id);break;
  case 'edit-origin':openOrigin(id,b.dataset.site,true);break;
